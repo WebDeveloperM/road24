@@ -1,0 +1,203 @@
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+        referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="../static/base/style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"
+        integrity="sha512-HqxHUkJM0SYcbvxUw5P60SzdOTy/QVwA1JJrvaXJv4q7lmbDZCmZaqz01UPOaQveoxfYRv1tHozWGPMcuTBuvQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        .coolumn {
+            display: flex;
+            justify-content: space-between;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box  ">
+
+        <nav class="navbar">
+            <a href="{% url 'main' %}" class="navbar-start">
+                <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjEwIiBoZWlnaHQ9IjM2IiB2aWV3Qm94PSIwIDAgMjEwIDM2IiBmaWxsPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPgo8cGF0aCBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGNsaXAtcnVsZT0iZXZlbm9kZCIgZD0iTTE3LjYyOTYgMC45NTMxNDNMMzIuNDA1NyA4LjQwMTY0QzMyLjk3NjUgOC42OTAyNyAzMy4zNTgyIDkuMjUwNzYgMzMuNDE5NCA5Ljg4NTc1QzMzLjQ3OTIgMTAuNTA5MiAzNC41NDk2IDIzLjEyODIgMjQuMjg0MiAzMi45MTQ2QzI0LjEwNDUgMzIuMTQ0NiAyMy45MTQ1IDMxLjM3NzEgMjMuNzE0NiAzMC42MTI0QzIzLjE4NTMgMjguNTg4NCAyMi41ODU4IDI2LjU4MjkgMjEuOTA2OCAyNC42MDU4QzIxLjIwMTEgMjIuNTUwOSAyMC40MTA0IDIwLjUyNDQgMTkuNTE0MSAxOC41NDhDMTguNjI3OSAxNi41OTM4IDE3LjY0MjEgMTQuNjgzNCAxNi41MjUyIDEyLjg1NTVDMTUuNDMwMSAxMS4wNjM3IDE0LjIxMjggOS4zNDU1NiAxMi44NDQ5IDcuNzU5MDhDMTEuNzYyMyA2LjUwMzUgMTAuNTgzMyA1LjMzMTc1IDkuMzAxNDkgNC4yODg4M0wxNS45NzA5IDAuOTQ5NDE5QzE2LjQ5MzYgMC42ODg3MjEgMTcuMTA4OSAwLjY4Njg1OSAxNy42Mjk2IDAuOTUzMTQzWk02LjQzNTc0IDUuNzIzNzFMNy4xOTQyNSA1LjM0MzkyQzcuMzUxNSA1LjQ5MDgyIDcuNTA3MzUgNS42MzkyIDcuNjYwNzggNS43OTA3M0M4LjM2NTMzIDYuNDg2NTIgOS4wMjkxNSA3LjIyODggOS42NDI3NiA4LjAwOTAyQzkuOTI0OTEgOC4zNjc3NiAxMC4xOTgyIDguNzMzNzYgMTAuNDcxNSA5LjA5OTYzQzEwLjUyMDcgOS4xNjU0OCAxMC41Njk4IDkuMjMxMzMgMTAuNjE5MSA5LjI5NzEzTDkuMzc4MSA5LjI5NTM0TDkuMzQ1MyA5LjI0ODQ2QzguODEyMDIgOC40ODUyNyA4LjI2MzU2IDcuNzMzMTkgNy42NTMgNy4wMzE0MUM3LjMxMDk5IDYuNjM4MjcgNi45NjQwMSA2LjI1MDEgNi41OTU3NiA1Ljg4MjA3QzYuNTQyNjQgNS44Mjg5OCA2LjQ4OTMgNS43NzYyMSA2LjQzNTc0IDUuNzIzNzFaTTQuNTMwMDYgNi42Nzc4OUM1LjUwOTczIDcuODQxNTMgNi4zNTAzNyA5LjEyMDY2IDcuMDU5NjEgMTAuNDc3MkM4LjAyNTA3IDEyLjMyMzcgOC43NTczMiAxNC4yOTE3IDkuMzI3NzUgMTYuMjk5NEM5LjkyMTY4IDE4LjM4OTYgMTAuMzM1NiAyMC41MzM0IDEwLjYyNDcgMjIuNjg4NEMxMC45MTQ5IDI0Ljg1MTcgMTEuMDc4NiAyNy4wMzIzIDExLjE0NDEgMjkuMjE0MUMxMS4xOTggMzEuMDEzMSAxMS4xODU1IDMyLjgxNDEgMTEuMTA5NiAzNC42MTIxQy0xLjYzNjUgMjQuNTUxMyAwLjA2NDk2ODIgOS45ODg3MiAwLjA4NjY1MTQgOS44MjYxNkMwLjE2NDQ4OCA5LjIxMTY2IDAuNTQ0NDA3IDguNjc3MjMgMS4wOTQ4MyA4LjM5NzkxTDQuNTMwMDYgNi42Nzc4OVpNMTYuMDY4MyAyOS4wNjU5QzE2LjA2ODMgMjkuMDY1OSAxNi4yMTcgMjkuNzQ1OCAxNi4yOTA2IDMwLjI5MzZDMTYuNDk4MyAzMS45MzkzIDE2LjY1MSAzMy41ODkxIDE2Ljc3MDEgMzUuMjQzOEwxOC45NTUzIDM1LjI0NjRDMTguOTM5MSAzNS4xMTc3IDE4LjkyMjggMzQuOTg5IDE4LjkwNjYgMzQuODYwNEMxOC42ODk1IDMzLjE0MDkgMTguNDcyNyAzMS40MjM3IDE4LjE2OTEgMjkuNzE2NkwxOC4wNTI5IDI5LjA2MzdMMTYuMDY4MyAyOS4wNjU5Wk0xNC4xODggMjAuMTI0MUMxNC4xODggMjAuMTI0MSAxNC4zNDg5IDIwLjU1MzcgMTQuMzkyNiAyMC43MDg0QzE0LjY2NTYgMjEuNjQwOSAxNC44OTQzIDIyLjU5MSAxNS4xMDcxIDIzLjUzOTRDMTUuMzA1MSAyNC40MjI1IDE1LjQ4NzIgMjUuMzA4NiAxNS42NTI1IDI2LjE5ODdMMTcuNDY5OSAyNi4xOTI1QzE3LjA3NTggMjQuNDcwMyAxNi42NDEyIDIyLjc1NzggMTYuMTE1MiAyMS4wNzE5QzE2LjAwMzggMjAuNzE0NSAxNS44ODk4IDIwLjM1OCAxNS43NzI0IDIwLjAwMjdMMTQuMTg4IDIwLjEyNDFaTTEwLjgwMzYgMTEuNTk2M0MxMC44MDM2IDExLjU5NjMgMTEuMDI4NCAxMi4wNTM5IDExLjA0ODkgMTIuMDkxNUMxMS41MTQ5IDEyLjk0NDcgMTEuOTI2NSAxMy44MzY0IDEyLjMwODEgMTQuNzMxNUMxMi42ODE3IDE1LjYwODEgMTMuMDI3IDE2LjQ5NDYgMTMuMzQ3OCAxNy4zOTI2TDEzLjM1MTQgMTcuNDAyN0wxNC44NzczIDE3LjQwNjlDMTQuNzAyOCAxNy4wMjY1IDE0LjUzOTQgMTYuNjQxOCAxNC4zNzU5IDE2LjI1NjlDMTQuMjkxMyAxNi4wNTc2IDE0LjIwNjYgMTUuODU4MiAxNC4xMjA0IDE1LjY1OTNDMTMuNjk4MyAxNC42ODY3IDEzLjIzNjUgMTMuNzMxNyAxMi43MzkzIDEyLjc5NjhDMTIuNTAwNiAxMi4zNDc5IDEyLjI1NTYgMTEuOTAxNSAxMS45OTU0IDExLjQ2NUwxMC44MDM2IDExLjU5NjNaIiBmaWxsPSJ1cmwoI3BhaW50MF9saW5lYXIpIi8+CjxwYXRoIGQ9Ik00NC44ODg3IDI5Ljc2NDNINDAuNTc5N1Y5LjI3OTMzSDUwLjI3NUM1Mi41MDkzIDkuMjc5MzMgNTQuMjY0OCA5Ljg0NTEgNTUuNTQxNiAxMC45NzY3QzU2LjgzODMgMTIuMDg4NyA1Ny40ODY2IDEzLjU0MjEgNTcuNDg2NiAxNS4zMzdDNTcuNDg2NiAxNi43MDI3IDU3LjA5NzYgMTcuODkyOCA1Ni4zMTk2IDE4LjkwNzNDNTUuNTYxNSAxOS45MDIyIDU0LjUwNDIgMjAuNjA0NiA1My4xNDc3IDIxLjAxNDNMNTkuNjExMiAyOS43NjQzSDU0LjYxMzlMNDguNTA5NSAyMS40ODI1SDQ0Ljg4ODdWMjkuNzY0M1pNNDQuODg4NyAxMi45NjY2VjE3Ljk0MTVINTAuMDM1NkM1MS4wMTMxIDE3Ljk0MTUgNTEuNzcxMiAxNy43MjY5IDUyLjMwOTggMTcuMjk3N0M1Mi44Njg0IDE2Ljg2ODUgNTMuMTQ3NyAxNi4yNTQgNTMuMTQ3NyAxNS40NTQxQzUzLjE0NzcgMTQuNjczNyA1Mi44Njg0IDE0LjA2ODkgNTIuMzA5OCAxMy42Mzk3QzUxLjc3MTIgMTMuMTkxIDUxLjAxMzEgMTIuOTY2NiA1MC4wMzU2IDEyLjk2NjZINDQuODg4N1oiIGZpbGw9InVybCgjcGFpbnQxX2xpbmVhcikiLz4KPHBhdGggZD0iTTY3LjIxIDI0LjMyMTFDNjguNDQ2OCAyNS41ODkyIDY5Ljk5MjkgMjYuMjIzMyA3MS44NDgyIDI2LjIyMzNDNzMuNjgzNSAyNi4yMjMzIDc1LjIxOTYgMjUuNTg5MiA3Ni40NTY0IDI0LjMyMTFDNzcuNjkzMyAyMy4wNTMgNzguMzExNyAyMS40NTMyIDc4LjMxMTcgMTkuNTIxOEM3OC4zMTE3IDE3LjU5MDQgNzcuNjkzMyAxNS45OTA2IDc2LjQ1NjQgMTQuNzIyNUM3NS4yMTk2IDEzLjQ1NDQgNzMuNjgzNSAxMi44MjAzIDcxLjg0ODIgMTIuODIwM0M2OS45OTI5IDEyLjgyMDMgNjguNDQ2OCAxMy40NTQ0IDY3LjIxIDE0LjcyMjVDNjUuOTkzMSAxNS45NzExIDY1LjM4NDYgMTcuNTcwOSA2NS4zODQ2IDE5LjUyMThDNjUuMzg0NiAyMS40NzI4IDY1Ljk5MzEgMjMuMDcyNSA2Ny4yMSAyNC4zMjExWk02MC45ODU4IDE5LjUyMThDNjAuOTg1OCAxNi41MTczIDYyLjAxMzIgMTQuMDAwNiA2NC4wNjggMTEuOTcxNkM2Ni4xMjI3IDkuOTAzNjMgNjguNzE2MSA4Ljg2OTYzIDcxLjg0ODIgOC44Njk2M0M3NC45NjAyIDguODY5NjMgNzcuNTQzNiA5LjkwMzYzIDc5LjU5ODQgMTEuOTcxNkM4MS42NzMxIDE0LjAzOTYgODIuNzEwNSAxNi41NTY0IDgyLjcxMDUgMTkuNTIxOEM4Mi43MTA1IDIyLjQ2NzcgODEuNjczMSAyNC45ODQ1IDc5LjU5ODQgMjcuMDcyQzc3LjU0MzYgMjkuMTQgNzQuOTYwMiAzMC4xNzQgNzEuODQ4MiAzMC4xNzRDNjguNzE2MSAzMC4xNzQgNjYuMTIyNyAyOS4xNCA2NC4wNjggMjcuMDcyQzYyLjAxMzIgMjUuMDA0IDYwLjk4NTggMjIuNDg3MiA2MC45ODU4IDE5LjUyMThaIiBmaWxsPSJ1cmwoI3BhaW50Ml9saW5lYXIpIi8+CjxwYXRoIGQ9Ik04Ny42NTQ3IDI5Ljc2NDNIODMuMTM2Mkw5Mi4xMTMzIDkuMTYyMjdIOTYuMjQyOEwxMDUuMjIgMjkuNzY0M0gxMDAuNjQyTDk4LjU3NjggMjUuMDIzNUg4OS43MTk0TDg3LjY1NDcgMjkuNzY0M1pNOTQuMTQ4MSAxNC40Mjk4TDkxLjA2NiAyMS41NDFIOTcuMjAwNEw5NC4xNDgxIDE0LjQyOThaIiBmaWxsPSJ1cmwoI3BhaW50M19saW5lYXIpIi8+CjxwYXRoIGQ9Ik0xMTUuNjc5IDI5Ljc2NDNIMTA3LjgzOVY5LjI3OTMzSDExNS42NzlDMTE5LjA3MSA5LjI3OTMzIDEyMS44MzQgMTAuMjM1MyAxMjMuOTY4IDEyLjE0NzJDMTI2LjEwMyAxNC4wNTkxIDEyNy4xNyAxNi41MTczIDEyNy4xNyAxOS41MjE4QzEyNy4xNyAyMi41NDU4IDEyNi4xMDMgMjUuMDEzNyAxMjMuOTY4IDI2LjkyNTZDMTIxLjg1MyAyOC44MTgxIDExOS4wOTEgMjkuNzY0MyAxMTUuNjc5IDI5Ljc2NDNaTTExMi4xNDggMTMuMDU0NFYyNS45ODkySDExNS4zMkMxMTcuNjU0IDI1Ljk4OTIgMTE5LjQ3IDI1LjQyMzQgMTIwLjc2NiAyNC4yOTE5QzEyMi4wODMgMjMuMTQwOCAxMjIuNzQxIDIxLjU1MDggMTIyLjc0MSAxOS41MjE4QzEyMi43NDEgMTcuNDkyOCAxMjIuMDgzIDE1LjkxMjUgMTIwLjc2NiAxNC43ODFDMTE5LjQ3IDEzLjYyOTkgMTE3LjY1NCAxMy4wNTQ0IDExNS4zMiAxMy4wNTQ0SDExMi4xNDhaIiBmaWxsPSJ1cmwoI3BhaW50NF9saW5lYXIpIi8+CjxwYXRoIGQ9Ik0xNDQuMzg3IDI5Ljc2NDNIMTI5LjgxNFYyNy40MjMxTDEzNi4zOTcgMjEuMzk0N0MxMzcuNzk0IDIwLjEyNjYgMTM4LjgyMSAxOS4wMzQxIDEzOS40OCAxOC4xMTcxQzE0MC4wNzggMTcuMjM5MiAxNDAuMzc3IDE2LjMwMjcgMTQwLjM3NyAxNS4zMDc4QzE0MC4zNzcgMTQuMjczOCAxMzkuOTg4IDEzLjQ0NDYgMTM5LjIxIDEyLjgyMDNDMTM4LjQ1MiAxMi4xNzY1IDEzNy40NTUgMTEuODU0NiAxMzYuMjE4IDExLjg1NDZDMTM0LjE0MyAxMS44NTQ2IDEzMi4xODggMTIuNzAzMiAxMzAuMzUzIDE0LjQwMDZWMTEuMDM1MkMxMzIuMDY4IDkuNjEwOTkgMTM0LjEzMyA4Ljg5ODg5IDEzNi41NDcgOC44OTg4OUMxMzguNTIyIDguODk4ODkgMTQwLjE5OCA5LjQ1NDkxIDE0MS41NzQgMTAuNTY3QzE0Mi45NzEgMTEuNjc5IDE0My42NjkgMTMuMTMyNCAxNDMuNjY5IDE0LjkyNzNDMTQzLjY2OSAxNi4zMTI1IDE0My4zMiAxNy41NzA5IDE0Mi42MjIgMTguNzAyNEMxNDEuODgzIDE5Ljg1MzUgMTQwLjcwNiAyMS4xODAxIDEzOS4wOTEgMjIuNjgyM0wxMzQuNTcyIDI2Ljg5NjRIMTQ0LjM4N1YyOS43NjQzWiIgZmlsbD0idXJsKCNwYWludDVfbGluZWFyKSIvPgo8cGF0aCBkPSJNMTYwLjE0NSAyOS43NjQzSDE1Ni45MTNWMjQuNDA4OUgxNDYuMDUxVjIxLjk1MDdMMTU2LjkxMyA5LjI3OTMzSDE2MC4xNDVWMjEuNjU4MUgxNjMuNDA2VjI0LjQwODlIMTYwLjE0NVYyOS43NjQzWk0xNTYuOTEzIDEzLjQwNTZMMTQ5Ljc5MSAyMS42NTgxSDE1Ni45MTNWMTMuNDA1NloiIGZpbGw9InVybCgjcGFpbnQ2X2xpbmVhcikiLz4KPHBhdGggZD0iTTE2Ny41OTQgMjkuOTk4NEMxNjYuOTk1IDI5Ljk5ODQgMTY2LjQ4NiAyOS44MDMzIDE2Ni4wNjggMjkuNDEzMUMxNjUuNjY5IDI5LjAwMzQgMTY1LjQ2OSAyOC41MDU5IDE2NS40NjkgMjcuOTIwNkMxNjUuNDY5IDI3LjM1NDkgMTY1LjY2OSAyNi44NzY5IDE2Ni4wNjggMjYuNDg2N0MxNjYuNDg2IDI2LjA3NyAxNjYuOTk1IDI1Ljg3MjEgMTY3LjU5NCAyNS44NzIxQzE2OC4xNTIgMjUuODcyMSAxNjguNjQxIDI2LjA3NyAxNjkuMDYgMjYuNDg2N0MxNjkuNDc5IDI2Ljg3NjkgMTY5LjY4OCAyNy4zNTQ5IDE2OS42ODggMjcuOTIwNkMxNjkuNjg4IDI4LjUwNTkgMTY5LjQ3OSAyOS4wMDM0IDE2OS4wNiAyOS40MTMxQzE2OC42NjEgMjkuODAzMyAxNjguMTcyIDI5Ljk5ODQgMTY3LjU5NCAyOS45OTg0WiIgZmlsbD0idXJsKCNwYWludDdfbGluZWFyKSIvPgo8cGF0aCBkPSJNMTcyLjI5IDIxLjEwMjFWOS4yNzkzM0gxNzUuNTgyVjIxLjIxOTFDMTc1LjU4MiAyMy4xMTE1IDE3Ni4wNzEgMjQuNTc0OCAxNzcuMDQ4IDI1LjYwODhDMTc4LjAyNiAyNi42MjMzIDE3OS4zNjIgMjcuMTMwNSAxODEuMDU4IDI3LjEzMDVDMTgyLjc1NCAyNy4xMzA1IDE4NC4wOSAyNi42MjMzIDE4NS4wNjggMjUuNjA4OEMxODYuMDY1IDI0LjU3NDggMTg2LjU2NCAyMy4xMTE1IDE4Ni41NjQgMjEuMjE5MVY5LjI3OTMzSDE4OS44NTZWMjEuMTAyMUMxODkuODU2IDIzLjk3IDE4OS4wMzggMjYuMTk0IDE4Ny40MDIgMjcuNzc0M0MxODUuNzQ2IDI5LjM1NDYgMTgzLjYzMiAzMC4xNDQ3IDE4MS4wNTggMzAuMTQ0N0MxNzguNDg1IDMwLjE0NDcgMTc2LjM3IDI5LjM2NDMgMTc0LjcxNCAyNy44MDM2QzE3My4wOTggMjYuMjIzMyAxNzIuMjkgMjMuOTg5NSAxNzIuMjkgMjEuMTAyMVoiIGZpbGw9InVybCgjcGFpbnQ4X2xpbmVhcikiLz4KPHBhdGggZD0iTTIxMCAyOS43NjQzSDE5My4yNDNWMjcuNDgxN0wyMDUuMDMzIDEyLjIzNUgxOTMuODQxVjkuMjc5MzNIMjA5LjUyMVYxMS41MzI3TDE5Ny43NjEgMjYuODA4NkgyMTBWMjkuNzY0M1oiIGZpbGw9InVybCgjcGFpbnQ5X2xpbmVhcikiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQwX2xpbmVhciIgeDE9IjE2LjczOTEiIHkxPSIwLjc1MzY2MiIgeDI9IjE2LjczOTEiIHkyPSIzNS4yNDY0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMwMzNGMzciLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDU1MzQ5IiBzdG9wLW9wYWNpdHk9IjAuODUiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDFfbGluZWFyIiB4MT0iMTI1LjI5IiB5MT0iOC44Njk2MyIgeDI9IjEyNS4yOSIgeTI9IjMwLjE3NCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMDMzRjM3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA1NTM0OSIgc3RvcC1vcGFjaXR5PSIwLjg1Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQyX2xpbmVhciIgeDE9IjEyNS4yOSIgeTE9IjguODY5NjMiIHgyPSIxMjUuMjkiIHkyPSIzMC4xNzQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAzM0YzNyIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNTUzNDkiIHN0b3Atb3BhY2l0eT0iMC44NSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50M19saW5lYXIiIHgxPSIxMjUuMjkiIHkxPSI4Ljg2OTYzIiB4Mj0iMTI1LjI5IiB5Mj0iMzAuMTc0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMwMzNGMzciLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDU1MzQ5IiBzdG9wLW9wYWNpdHk9IjAuODUiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDRfbGluZWFyIiB4MT0iMTI1LjI5IiB5MT0iOC44Njk2MyIgeDI9IjEyNS4yOSIgeTI9IjMwLjE3NCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMDMzRjM3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA1NTM0OSIgc3RvcC1vcGFjaXR5PSIwLjg1Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQ1X2xpbmVhciIgeDE9IjEyNS4yOSIgeTE9IjguODY5NjMiIHgyPSIxMjUuMjkiIHkyPSIzMC4xNzQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAzM0YzNyIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNTUzNDkiIHN0b3Atb3BhY2l0eT0iMC44NSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50Nl9saW5lYXIiIHgxPSIxMjUuMjkiIHkxPSI4Ljg2OTYzIiB4Mj0iMTI1LjI5IiB5Mj0iMzAuMTc0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMwMzNGMzciLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDU1MzQ5IiBzdG9wLW9wYWNpdHk9IjAuODUiLz4KPC9saW5lYXJHcmFkaWVudD4KPGxpbmVhckdyYWRpZW50IGlkPSJwYWludDdfbGluZWFyIiB4MT0iMTI1LjI5IiB5MT0iOC44Njk2MyIgeDI9IjEyNS4yOSIgeTI9IjMwLjE3NCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjMDMzRjM3Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzA1NTM0OSIgc3RvcC1vcGFjaXR5PSIwLjg1Ii8+CjwvbGluZWFyR3JhZGllbnQ+CjxsaW5lYXJHcmFkaWVudCBpZD0icGFpbnQ4X2xpbmVhciIgeDE9IjEyNS4yOSIgeTE9IjguODY5NjMiIHgyPSIxMjUuMjkiIHkyPSIzMC4xNzQiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAzM0YzNyIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwNTUzNDkiIHN0b3Atb3BhY2l0eT0iMC44NSIvPgo8L2xpbmVhckdyYWRpZW50Pgo8bGluZWFyR3JhZGllbnQgaWQ9InBhaW50OV9saW5lYXIiIHgxPSIxMjUuMjkiIHkxPSI4Ljg2OTYzIiB4Mj0iMTI1LjI5IiB5Mj0iMzAuMTc0IiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+CjxzdG9wIHN0b3AtY29sb3I9IiMwMzNGMzciLz4KPHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjMDU1MzQ5IiBzdG9wLW9wYWNpdHk9IjAuODUiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K"
+                    alt="">
+
+
+            </a>
+            <div class="navbar-end mr-6 mt-3">
+                <ion-icon class="icon">
+                    <i class="fa-solid fa-plus"></i>
+
+                </ion-icon>
+            </div>
+        </nav>
+    </div>
+
+    <div class="coolumn">
+        <div class="debit">
+            <div class="w-full max-w-lg mx-auto p-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h2 class="text-lg font-medium mb-6">Payment Information</h2>
+
+                    {% if messages %}
+                    <ul class="messages" style="display: block;">
+                        {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                        <li class="{{ message.tags }}" style="color: rgb(255, 0, 0);">
+                            {{ message|safe }}
+                        </li>
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+                    <br>
+                    {% endif %}
+                    <form method="post" name="form">
+                        {% csrf_token %}
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="col-span-2 sm:col-span-1">
+                                <label for="card-number" class="block text-sm font-medium text-gray-700 mb-2">Card
+                                    Number</label>
+                                <input type="text" name="card-number" id="card-number" placeholder="0000 0000 0000 0000"
+                                    class="w-full py-3 px-4 border border-gray-400 rounded-lg focus:outline-none focus:border-blue-500">
+                                    {% if messages %}
+                                    <ul class="messages" style="display: block;">
+                                        {% for message in messages %}
+                                        {% if message.tags == 'error' %}
+                                        <li class="{{ message.tags }}" style="color: rgb(255, 0, 0);">
+                                            {{ message|safe }}
+                                        </li>
+                                        {% endif %}
+                                     {% endfor %}
+                                    </ul>
+                                    <br>
+                                    {% endif %}
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <label for="expiration-date"
+                                    class="block text-sm font-medium text-gray-700 mb-2">Expiration Date</label>
+                                <input type="text" name="card-date" id="expiration-date" placeholder="MM / YY"
+                                    class="w-full py-3 px-4 border border-gray-400 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <label for="cvv" class="block text-sm font-medium text-gray-700 mb-2">CVV</label>
+                                <input type="text" name="card-cvc" id="cvv" placeholder="000"
+                                    class="w-full py-3 px-4 border border-gray-400 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <label for="card-holder" class="block text-sm font-medium text-gray-700 mb-2">Card
+                                    Holder</label>
+                                <input type="text" name="card-holder" id="card-holder" placeholder="Full Name"
+                                    class="w-full py-3 px-4 border border-gray-400 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+                        <div class="mt-8">
+                            <button type="submit"
+                                class="w-full bg-green-500 hover:bg-blue-600 text-white font-medium py-3 rounded-lg focus:outline-none">Add
+                                Card</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% for card in cards %}
+
+        <div class="car_card">
+            <figure class="absolute top-8 left-8" style="margin-left: 700px; margin-top: 200px;">
+                <div class="credit-card w-max h-max relative select-none pointer-events-none">
+                    <!-- Card verso -->
+                    <div
+                        class="verso z-1 absolute overflow-hidden transform translate-y-12 left-16 w-96 h-56 rounded-2xl bg-gray-100 shadow-2xl">
+                        <div class="w-full h-12 bg-gray-200 absolute top-10">&nbsp;</div>
+                    </div>
+
+                    <!-- Card recto -->
+                    <div
+                        class="recto z-2 absolute overflow-hidden w-96 h-56 rounded-2xl px-8 py-6 bg-red-400 text-white shadow-xl flex flex-col justify-end gap-6">
+                        <!-- Visa logo -->
+                        <div class="logo absolute top-6 right-8 w-16 h-8 flex justify-items-center items-center">
+                            <svg viewBox="0 0 1000 324.68">
+                                <path
+                                    d="m651.19 0.5c-70.933 0-134.32 36.766-134.32 104.69 0 77.9 112.42 83.281 112.42 122.42 0 16.478-18.884 31.229-51.137 31.229-45.773 0-79.984-20.611-79.984-20.611l-14.638 68.547s39.41 17.41 91.734 17.41c77.552 0 138.58-38.571 138.58-107.66 0-82.316-112.89-87.536-112.89-123.86 0-12.908 15.502-27.052 47.663-27.052 36.287 0 65.892 14.99 65.892 14.99l14.326-66.204s-32.213-13.897-77.642-13.897zm-648.97 4.9966-1.7176 9.9931s29.842 5.4615 56.719 16.356c34.607 12.493 37.072 19.765 42.9 42.354l63.511 244.83h85.137l131.16-313.53h-84.942l-84.278 213.17-34.39-180.7c-3.1539-20.681-19.129-32.478-38.684-32.478h-135.41zm411.87 0-66.634 313.53h80.999l66.4-313.53h-80.765zm451.76 0c-19.532 0-29.88 10.457-37.474 28.73l-118.67 284.8h84.942l16.434-47.467h103.48l9.9931 47.467h74.948l-65.385-313.53h-68.273zm11.047 84.707 25.178 117.65h-67.454l42.276-117.65z"
+                                    fill="#fff" />
+                            </svg>
+                        </div>
+
+                        <!-- PIN -->
+                        <div class="pin w-11 h-7 rounded bg-yellow-100">&nbsp;</div>
+
+                        <!-- Card number -->
+                        <div class="number whitespace-nowrap text-2xl font-semibold"
+                            style="font-family:Courier new, mono;" style="color: black;">{{card.card_number}}</div>
+
+                        <!-- Card infos -->
+                        <div class="credentials flex gap-8">
+                            <div class="owner flex flex-col w-max">
+                                <span class="text-xs uppercase">Card holder</span>
+                                <span class="whitespace-nowrap text-lg">{{card.card_holder}}</span>
+                            </div>
+                            <div class="expires flex flex-col w-max">
+                                <span class="text-xs uppercase">Expires</span>
+                                <span class="whitespace-nowrap text-lg">{{card.card_date}}</span>
+                            </div>
+                            <div class="cvc flex flex-col w-max">
+                                <span class="text-xs uppercase">CVV</span>
+                                <span class="whitespace-nowrap text-lg">{{card.card_cvc}}</span>
+                            </div>
+                           
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+            </figure>
+            
+
+            <div style="margin-right: 50vh;">
+                <a class="button is-fullwidth is-danger " 
+            href="{% url 'delete_card_item' card.pk %}" style="  margin-top: 65vh; ">Delete</a>
+            </div>
+        </div>
+
+
+        {% endfor %}
+
+    </div>
+
+    
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/imask/7.2.0/imask.min.js"
+        integrity="sha512-xZ194LjPOV8htiCScik3T4rKNszIoKM/F/7ipGFnu5gHoYKQlSW1R0raMaZoUSG2xY0hri9HlBQRkKpMSDtQ7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script>
+        let card_number = document.querySelector('#card-number')
+        let card_date = document.querySelector('#expiration-date')
+        let card_cvv = document.querySelector('#cvv')
+
+
+        IMask(card_number, { mask: '0000 0000 0000 0000' })
+        IMask(card_date, { mask: '00/00' })
+        IMask(card_cvv, { mask: '000' })
+
+
+    </script>
+
+</body>
+
+</html>

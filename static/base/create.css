@@ -1,0 +1,21 @@
+.avto_number {
+    margin-top: 20px;
+    border: 1px solid #333;
+    border-radius: 20px;
+    width: 5vh;
+    
+}
+
+.avto_number input:first-child {
+    border: 1px solid #333;
+    height: 100%
+}
+
+.code {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.number_code {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}

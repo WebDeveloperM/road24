@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+{%  if cars %}
+{% for car in cars %}
+<div class="columns">
+
+
+    <div class="column is-6">
+        <div class="box" style=" height: 475px;">
+            <div class="box-image">
+                <div class="image">
+                    {% if car.image  %}
+                    <img src="{{car.image.url}} " style="width: 200vh; height: 350px;" alt="">
+                    {% else %}
+                    <h1 class="title">Rasm Joylashtining</h1>
+                    {% endif%}
+                </div>
+            </div><br>
+            <div class="has-text-centered">
+                <div class="box-content  px-6" style="margin-left: 99px;">
+                    <h1 style="border: 3px solid rgb(39, 37, 37);width: 30vh;height: auto; " class="title">
+                        {{car.number}} <span>
+                            <img src="https://media.istockphoto.com/id/1474751846/vector/uzbekistan-country-flag-illustration.jpg?s=612x612&w=0&k=20&c=FFhW5-na9K9f6lU_EhKqb0qe5NyU8BwuFton5R83EJw="
+                                width="20px" class="mb-3"></span>
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="column">
+        <div class="columns is-multiline is-vcentered">
+            <div class="column is-6">
+                <a href="{% url 'fine' car.pk %}" class="box">
+                    <div class="has-text-centered" style="height: 100px;">
+                        <i class="fa-solid fa-ban is-size-3 has-background-grey-light p-3"
+                            style="border-radius: 50%;"></i>
+                        <br>
+                        <p  class="has-text-grey" >Штрафы ПДД
+                        </p>
+
+                    </div>
+
+                </a>
+            </div>
+            <div class="column is-6">
+                <div class="box">
+                    <div class="has-text-centered" style="height: 100px;">
+                        <i class="fa-solid fa-car-side is-size-3 has-background-grey-light p-3"
+                            style="border-radius: 50%;"></i>
+                        <br>
+                        <p class="has-text-grey">Где пройти Техосмотр?</p>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="column is-6">
+                <div class="box">
+                    <div class="has-text-centered" style="height: 100px;">
+                        <i class="fa-solid fa-book is-size-3 has-background-grey-light p-3"
+                            style="border-radius: 50%;"></i>
+                        <br>
+                        <p class="has-text-grey">Знаки, Разметки и привала</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="box">
+                    <div class="has-text-centered" style="height: 100px;">
+                        <i class="fa-solid fa-car-on is-size-3 has-background-grey-light p-3"
+                            style="border-radius: 50%;"></i>
+                        <br>
+                        <p class="has-text-grey">Jarimalar YPX</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="box">
+                    <div class="has-text-centered" style="height: 100px;">
+                        <i class="fa-solid fa-book is-size-3 has-background-grey-light p-3"
+                            style="border-radius: 50%;"></i>
+                        <br>
+                        <p class="has-text-grey">Знаки, Разметки и привала</p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="column is-6">
+                <div class="box">
+                    <div class="has-text-centered" style="height: 100px;">
+                        <i class="fa-solid fa-car-rear is-size-3 has-background-grey-light p-3"
+                            style="border-radius: 50%;"></i>
+                        <br>
+                        <p class="has-text-grey">Переоборудование Авто</p>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+
+
+
+    </div>
+</div>
+
+<a  class="button is-danger" href="{% url 'delete_car_item' car.pk %}">O'chirish</a>
+
+<hr width="4000px">
+
+
+{% endfor %}
+
+
+{% else %}
+  <div class="has-text-centered">
+    <p class="title">Hali mashina mavjud emas</p>
+  </div>
+{% endif %}
+
+
+
+
+<!-- 
+<script>
+    alert('Xush kelibsiz')
+</script> -->
+
+{% endblock %}
